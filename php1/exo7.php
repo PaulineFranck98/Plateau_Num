@@ -79,7 +79,7 @@ switch (true){
 
     default :
         $categorie = "";
-        break;   
+        
 
 }
 

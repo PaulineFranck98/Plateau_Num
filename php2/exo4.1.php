@@ -13,6 +13,7 @@ $capitales = [
 
 
 
+
 // prend en paramètres tableau capitales
 function afficherTableHTML($capitales){
 
@@ -26,7 +27,7 @@ function afficherTableHTML($capitales){
     //  as : pour assigner chaque élément du tableau à une variable spécifique
     // pour chaque élément du tableau "capitales" on prend chaque nom de pays $pays et onn associde la capitale correspondante à $capitale
     foreach ($capitales as $pays => $capitale){
-    // $pays prend la valeur de la clé (clé,valeur), et $capitales la valeur qui correspond à la clé;
+     // $pays prend la valeur de la clé (clé,valeur), et $capitales la valeur qui correspond à la clé;
 
         // concaténation du lien avec $capitale pour associer chaque capitale avec son lien wiki
         // possible seulement car le lien est sous forme : "https://.......org.wiki/Berlin" (ex)
@@ -36,7 +37,7 @@ function afficherTableHTML($capitales){
         echo '<tr><td>'.strtoupper($pays).'</td><td>'.$capitale.'</td><td><a target=_blank href="'.$lien.$capitale .'">Lien</a></td></tr>';
     }
 
-echo "</table>";
+    echo "</table>";
 
 }
 

@@ -24,7 +24,7 @@ function afficherTableHTML($capitales){
         // pour chaque élément du tableau "capitales" on prend chaque nom de pays $pays et on associde la capitale correspondante à $capitale :
         // forEach parcourt chaque élément du tableau
         forEach ($capitales as $pays => $capitales){
-        // $pays prend la valeur de la clé (clé,valeur), et $capitales la valeur qui correspond à la clé;
+         // $pays prend la valeur de la clé (clé,valeur), et $capitales la valeur qui correspond à la clé;
 
             // affichage de mon tableau avc le pays en majuscule (strtoupper)
             echo "<tr><td>" .strtoupper($pays) . "</td><td>" .$capitales ."</td></tr>";
