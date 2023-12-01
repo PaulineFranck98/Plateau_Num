@@ -14,7 +14,7 @@
 
 // variable à vérifier
 // $email = "elan@elan-formation.fr";
-$email = "contact@elan";
+$email = "contact@elan.fr";
 
 // validation ou non de l'adresse e-mail
 // filter_var : filtre une variable avec un filtre spécifique 
