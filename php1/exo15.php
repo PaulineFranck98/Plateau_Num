@@ -70,5 +70,5 @@ echo $p2;
 
 ?>
 
-<h1>Bienvenue sur mon site <?= $p1->getNom()." ".$p1->getPrenom() ?></h1>
+<!-- <h1>Bienvenue sur mon site <?= $p1->getNom()." ".$p1->getPrenom() ?></h1> -->
 

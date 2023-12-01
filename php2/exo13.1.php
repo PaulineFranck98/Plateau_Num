@@ -47,7 +47,7 @@ class Voiture {
     }
 
 
-    // setter
+    // setter setter
 
     public function setMarque($marque){
         $this->_marque = $marque;
