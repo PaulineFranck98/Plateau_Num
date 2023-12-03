@@ -104,7 +104,7 @@ class Voiture {
         return $this->vitesseActuelle;
     }
 
-    public function getInfosVehicule(){
+    public function infosVehicule(){
 
         $statut = ($this->vitesseActuelle > 0) ? "est démarré" : "est à l'arrêt";
         
@@ -159,9 +159,9 @@ $citroen->stopper();
 $citroen->accelerer(50);
 
 
-echo $peugeot->getInfosVehicule() . "<br><br>";
+echo $peugeot->infosVehicule() . "<br><br>";
 
-echo $citroen->getInfosVehicule();
+echo $citroen->infosVehicule();
 
 
 
