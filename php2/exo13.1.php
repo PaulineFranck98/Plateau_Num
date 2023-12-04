@@ -1,72 +1,70 @@
 <?php
 
-
+// création de ma classe qui englobe des attributs et des méthodes
 class Voiture {
 
+    // private : uniquement accessible depuis la classe où il est déclaré
     private string $marque;
     private string $modele;
     private int $nbPortes;
-    private int $vitesseActuelle;
+    private int $vitesseActuelle = 0;
+    private bool $estDemarre = false;
 
+    // le constructeur permet de construire la classe (on précise le type : string, int, bool, etc)
     public function __construct(string $marque, string $modele, int $nbPortes){
 
         $this->marque = $marque;
         $this->modele = $modele;
         $this->nbPortes = $nbPortes;
-        $this->vitesseActuelle = 0;
+        
     }
 
     public function demarrer(){
 
         
-        if( $this->vitesseActuelle > 0){
-
-            echo "Le véhicule " . $this->marque . " " . $this->modele . " démarre <br><br>";
+         $this->estDemarre = true;
             
-        }else {
+        echo "Le véhicule " . $this->marque . " " . $this->modele . " démarre <br><br>";
             
-            echo "Le véhicule " . $this->marque . " " .  $this->modele . " est à l'arrêt <br><br>";
             
-        }
+        
 
     }
 
     public function accelerer($acceleration){
 
-        if( $this->vitesseActuelle > 0){
+        // if ($this->estDemarre == true){
+        if ($this->estDemarre){
 
             $this->vitesseActuelle += $acceleration;
 
             echo "Le véhicule " . $this->marque . " " .  $this->modele . " accélère de " . $acceleration . " km/h <br><br>";
 
         } else {
-            
+            echo "Le véhicule " . $this->marque . " " . $this->modele . " veut accélérer de " . $acceleration . "km/h <br><br>";
             echo "Pour accélérer, il faut démarrer le véhicule " . $this->marque . " " . $this->modele . " ! <br><br>";
 
         }
 
-            echo "La vitesse du véhicule " . $this->marque . " " . $this->modele . " est de " . $this->vitesseActuelle . " km/h <br><br>";
+        echo "La vitesse du véhicule " . $this->marque . " " . $this->modele . " est de " . $this->vitesseActuelle . " km/h <br><br>";
         
 
     }
 
     public function stopper(){
         
-        if( $this->vitesseActuelle == 0){
+        $this->estDemarre = false;
 
-            echo "Le véhicule " . $this->marque . " " . $this->modele . " est stoppé<br><br>";
+        echo "Le véhicule " . $this->marque . " " . $this->modele . " est stoppé<br><br>";
             
-        }else {
-            
-            echo "Le véhicule " . $this->marque . " " .  $this->modele . " est démarré<br><br>";
-            
-        }
 
 
     }
+
+
     public function ralentir($vitesse){
 
-        if ($this->vitesseActuelle > 0) {
+        if ($this->estDemarre = true) {
 
             $this->vitesseActuelle -= $vitesse;
 
@@ -105,10 +103,20 @@ class Voiture {
         return $this->vitesseActuelle;
     }
 
-    public function infosVehicule(){
+    public function getEstDemarre(){
+        return $this->estDemarre;
 
-        $statut = ($this->vitesseActuelle > 0) ? "est démarré" : "est à l'arrêt";
+    }
+
+    public function setEstDemarre($estDemarre){
+        $this->estDemarre = $estDemarre;
+    }
+
+
+    public function infosVehicule(){
         
+        $statut = ($this->estDemarre) ? "est démarré" : "est à l'arrêt";
+
         return "Infos véhicule : <br/>" .
             "Nom et modèle du véhicule : " . $this->marque . " " . $this->modele . "<br/>" .
             "Nombre de portes : " . $this->nbPortes . "<br/>" .
@@ -139,11 +147,9 @@ class Voiture {
 
 $peugeot = new Voiture("Peugeot","408",5);
 
-$peugeot->setVitesseActuelle(5);
-
 $peugeot->demarrer();
 
-$peugeot->stopper();
+$peugeot->accelerer(50);
 
 $peugeot->ralentir(5);
 
@@ -151,20 +157,18 @@ $peugeot->ralentir(5);
 
 $citroen = new Voiture("Citroën","C4",3);
 
-$citroen->setVitesseActuelle(0);
-
 $citroen->demarrer();
 
 $citroen->stopper();
 
-$citroen->accelerer(50);
+$citroen->accelerer(20);
 
 
 echo $peugeot->infosVehicule() . "<br><br>";
 
 echo $citroen->infosVehicule();
 
-
+echo $peugeot;
 
 
 // var_dump($peugeot);

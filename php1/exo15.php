@@ -59,6 +59,7 @@ class Personne {
 
 
 $p1 = new Personne ("DUPONT","Michel", "1980-02-19");
+
 $p2 = new Personne ("DUCHEMIN", "Alice", "1985-01-17");
 
 echo $p1."<br>";
