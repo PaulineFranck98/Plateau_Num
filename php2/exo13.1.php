@@ -2,6 +2,7 @@
 
 
 class Voiture {
+
     private string $marque;
     private string $modele;
     private int $nbPortes;
