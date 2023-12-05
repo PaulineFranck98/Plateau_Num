@@ -126,7 +126,7 @@ class Voiture {
 
     }
 
-    // méthodes SETTERS pour modifier les valeurs des différentes propriétés---------------------------------------------------------------------------
+    // méthodes SETTERS pour modifier les valeurs des différentes propriétés ---------------------------------------------------------------------------
 
     public function setEstDemarre($estDemarre){
         $this->estDemarre = $estDemarre;
