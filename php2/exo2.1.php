@@ -33,7 +33,9 @@ function afficherTableHTML($capitales){
     // clôture mon tableau 
     echo "</table>";
 }
-
+foreach ($variable as $key => $value) {
+    # code...
+}
 // appel de ma fonction
 afficherTableHTML($capitales);
 
